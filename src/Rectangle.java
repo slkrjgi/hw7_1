@@ -21,7 +21,7 @@ public class Rectangle extends Shape{
     }
 
     @Override
-    public boolean equals(Shape obj) {
+    public boolean equals(Object obj) {
         boolean isEqual = false;
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
@@ -64,15 +64,15 @@ public class Rectangle extends Shape{
 
     @Override
     public double calculateArea() {
-        double abLength = Math.sqrt((Math.pow((this.b[0]-this.a[0]), 2)+Math.pow((this.b[1]-this.a[1]), 2)));
-        double adLength = Math.sqrt((Math.pow((this.d[0]-this.a[0]), 2)+Math.pow((this.d[1]-this.a[1]), 2)));
+        double abLength = getLength(a, b);
+        double adLength = getLength(a, d);
         return abLength*adLength;
     }
 
     @Override
     public double calculatePerimeter() {
-        double abLength = Math.sqrt((Math.pow((this.b[0]-this.a[0]), 2)+Math.pow((this.b[1]-this.a[1]), 2)));
-        double adLength = Math.sqrt((Math.pow((this.d[0]-this.a[0]), 2)+Math.pow((this.d[1]-this.a[1]), 2)));
+        double abLength = getLength(a, b);
+        double adLength = getLength(a, d);
         return (abLength+adLength)*2;
     }
 

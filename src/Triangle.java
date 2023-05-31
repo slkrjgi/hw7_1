@@ -18,7 +18,7 @@ public class Triangle extends Shape{
     }
 
     @Override
-    public boolean equals(Shape obj) {
+    public boolean equals(Object obj) {
         Triangle triangle = (Triangle) obj;
             boolean isEqual = false;
         if (this == obj) return true;
@@ -65,9 +65,9 @@ public class Triangle extends Shape{
 
     @Override
     public double calculatePerimeter() {
-        double abLength = Math.sqrt((Math.pow((this.b[0]-this.a[0]), 2)+Math.pow((this.b[1]-this.a[1]), 2)));
-        double bcLength = Math.sqrt((Math.pow((this.b[0]-this.c[0]), 2)+Math.pow((this.b[1]-this.c[1]), 2)));
-        double acLength = Math.sqrt((Math.pow((this.c[0]-this.a[0]), 2)+Math.pow((this.c[1]-this.a[1]), 2)));
+        double abLength = getLength(a, b);
+        double bcLength = getLength(b, c);
+        double acLength = getLength(a, c);
         return abLength+bcLength+acLength;
     }
 

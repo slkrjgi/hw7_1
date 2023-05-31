@@ -15,7 +15,7 @@ public class Circle extends Shape{
     }
 
     @Override
-    public boolean equals(Shape obj) {
+    public boolean equals(Object obj) {
         boolean isEqual = false;
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;

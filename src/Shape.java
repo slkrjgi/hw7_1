@@ -1,17 +1,12 @@
-public class Shape {
-    public String color;
-    protected int center[] = new int[2];
+public abstract class Shape {
 
-    protected int[] a = new int[2];
-    protected int[] b = new int[2];
-    protected int[] c = new int[2];
-    protected int[] d = new int[2];
+    public String color;
 
     public Shape () {
 
     }
     // не знайшла як можна оверрайднути метод з обджекту, бо там не буде потрібних аргументів
-    public boolean equals(Shape obj){
+    public boolean equals(Object obj){
         return false;
     }
 
@@ -25,13 +20,13 @@ public class Shape {
         return super.toString();
     }
 
-    public double calculateArea() {
-        return 0;
+    public static double getLength(int a[], int b[]) {
+        return Math.sqrt((Math.pow((b[0]-a[0]), 2)+Math.pow((b[1]-a[1]), 2)));
     }
 
-    public double calculatePerimeter() {
-        return 0;
-    }
+    public abstract double calculateArea();
+
+    public abstract double calculatePerimeter();
 
     public void paint() {
 
